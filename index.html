@@ -1,0 +1,187 @@
+<!-- Student Name: Nitanshu Rehani
+Student ID:   10382675 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movies</title>
+  <link rel="stylesheet" href="/style/movie.css">
+  <link rel="stylesheet" href="/style/bootstrap.min.css">
+  <script type="text/javascript" src = "/script/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src = "/script/movie.js"></script>
+  <script type="text/javascript" src = "/script/bootstrap.min.js"></script>
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>  
+  <div class="container">
+    <div class="jumbotron text-center">
+        <h1>Welcome to Dublin Movies Showtimes</h1>
+        <p>All times are in Ireland Time</p> 
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="navbar-header ">
+        <a class="navbar-brand" href="/">Home</a>
+      </div>
+      <ul class="nav navbar-nav navigation_list">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about.html" class="about">About Us</a></li>
+        <li><a href="/contact.html" class="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="movie-list"></div>
+    <div class="seatList container-fluid hide "> <!-- hide -->
+      <h1 class="seat-slct" >Select your Seats</h1>
+      <div class = "movie-info ">
+        <img src="/images/movie.jpg" class="img-rounded image-align" alt="Movie Theatre" width="250" height="250">
+      </div>
+
+      <div class="screen row text-center">
+        <p><b>Select your Seats by moving your mouse over the Seating Plan. Pink represents your current selected seats. Blue represents the available seat. You may select any seat block</b></p>
+        <button type="button" class="btn btn-primary btn-block">Screen</button>
+        <h1 class="seat-rows">Total Seats Selected <span>0</span></h1>
+        <div class = 'seat-lines'>
+        </div>
+        <button type="button" class="btn btn-primary proceed">Proceed</button>
+      </div>
+    </div>
+
+    <div class="display-form hide"><!-- hide -->
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class ="control-label col-md-4" for="sel1">Large Sweet Combo Deal + Tickets @21.45</label>
+          <div class="col-md-8">
+            <select class="form-control" id="sel1">
+              <option value="" selected>None</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-md-4" for="sel2">Medium Sweet Combo Deal + Tickets @20.45</label>
+          <div class="col-md-8">
+            <select class="form-control" id="sel2">
+              <option value="" selected>None</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-md-4" for="sel3">Medium Combo Deal + Tickets @18.45</label>
+          <div class="col-md-8">
+            <select class="form-control" id="sel3">
+              <option value="" selected>None</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-md-4" for="sel4">Adult Ticket @11.45</label>
+          <div class="col-md-8">
+            <select class="form-control" id="sel4" >
+              <option value="" selected>None</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-md-4" for="sel5">Student Ticket @9.45</label>
+          <div class="col-md-8">
+            <select class="form-control" id="sel5">
+              <option value="" selected>None</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-md-4" for="sel6">Child Ticket @3.45</label>
+          <div class="col-md-8">
+            <select class="form-control" id="sel6">
+              <option value="" selected>None</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-md-4" for="sel7">Family X 4 Tickets @32.45</label>
+          <div class="col-md-8">
+            <select class="form-control" id="sel7">
+              <option value="" selected>None</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <br>
+        </div>
+        <div class="text-center">
+        <button type="button" class="btn btn-primary finish_and_pay text-center" data-toggle="modal" data-target="#successMovie">Finish and Pay</button>
+        <button type="button" class="btn btn-danger cncl_bookng">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-sm text-center"> 
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">No Seat Selected</h4>
+          </div>
+          <div class="modal-body">
+            <p>Please select a seat in order to proceed</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default align-btn " data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="successMovie" role="dialog">
+      <div class="modal-dialog modal-md text-center"> 
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Hurrayy!!</h4>
+          </div>
+          <div class="modal-body">
+            <p>Booking Done. You can show the message at the movie time and pay</p>
+          </div>
+          <div class="modal-footer text-center">
+            <button type="button" class="btn btn-default align-btn enjoy-btn" data-dismiss="modal">Enjoy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<!-- Modal -->
